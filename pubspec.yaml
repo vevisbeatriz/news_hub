@@ -1,0 +1,58 @@
+name: news_hub
+description: "An app that shows the news"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+  # state management
+  flutter_bloc: ^8.1.5
+
+  #comparing dart objects
+  equatable: ^2.0.5
+
+  #service locator
+  get_it: ^7.6.7
+
+  #dataFormat
+  intl: ^0.19.0
+
+  #Database
+  floor: ^1.4.2
+
+  #make request to api
+  retrofit: ^4.1.0
+
+  #Hooks
+  flutter_hooks: ^0.20.5
+
+  #cached image
+  cached_network_image: ^3.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  floor_generator: ^1.4.2
+  build_runner: ^2.1.8
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/muli/Muli.ttf
+        - asset: assets/fonts/muli/Muli-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/muli/Muli-Light.ttf
+          weight: 300
