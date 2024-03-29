@@ -29,7 +29,7 @@ class ArticleRepositoryImpl implements ArticleRepository {
       /// If the HTTP status code of the response is OK (200), the method returns a `DataSuccess` state with the data from the response.
       /// Otherwise, it returns a `DataFailed` state with a `DioException` that contains information about the error.
       if (httpResponse.response.statusCode == HttpStatus.ok) {
-        return DataSuccess(httpResponse.data);
+        return DataSuccess(httpResponse.data.articles);
       } else {
         return DataFailed(DioException(
           error: httpResponse.response.statusMessage,

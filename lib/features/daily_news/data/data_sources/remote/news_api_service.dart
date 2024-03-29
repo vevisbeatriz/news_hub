@@ -19,9 +19,9 @@ abstract class NewsAPIService {
   // `getNewsArticles` is a method that fetches top news headlines from a remote API.
  // The method is asynchronous and returns a `Future` of `HttpResponse` that wraps a list of `ArticleModel`.
   @GET('/top-headlines')
-  Future<HttpResponse<List<ArticleModel>>> getNewsArticles({
-    @Query("apiKey") String? apiKey,
-    @Query("country") String? country,
-    @Query("category") String? category,
+  Future<HttpResponse<ArticleResponseModel>> getNewsArticles({
+    @Query("apiKey") String ? apiKey,
+    @Query("country") String ? country,
+    @Query("category") String ? category,
   });
 }
