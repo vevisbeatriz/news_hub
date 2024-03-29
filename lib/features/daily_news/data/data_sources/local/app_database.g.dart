@@ -143,7 +143,7 @@ class _$ArticleDao extends ArticleDao {
   final DeletionAdapter<ArticleModel> _articleModelDeletionAdapter;
 
   @override
-  Future<List<ArticleModel>> getAllArticles() async {
+  Future<List<ArticleModel>> getArticles() async {
     return _queryAdapter.queryList('SELECT * FROM articles',
         mapper: (Map<String, Object?> row) => ArticleModel(
             id: row['id'] as int?,

@@ -6,7 +6,8 @@ class ArticleResponseModel {
 
   ArticleResponseModel({required this.articles});
 
-  factory ArticleResponseModel.fromJson(Map<String, dynamic> articleResponseData) {
+  factory ArticleResponseModel.fromJson(
+      Map<String, dynamic> articleResponseData) {
     return ArticleResponseModel(
         articles: ((articleResponseData['articles'] ?? []) as List<dynamic>)
             .map((dynamic article) => ArticleModel.fromJson(article))
@@ -26,15 +27,15 @@ class ArticleModel extends ArticleEntity {
     String? publishedAt,
     String? content,
   }) : super(
-    id: id,
-    author: author,
-    title: title,
-    description: description,
-    url: url,
-    urlToImage: urlToImage,
-    publishedAt: publishedAt,
-    content: content,
-  );
+          id: id,
+          author: author,
+          title: title,
+          description: description,
+          url: url,
+          urlToImage: urlToImage,
+          publishedAt: publishedAt,
+          content: content,
+        );
 
   factory ArticleModel.fromJson(Map<String, dynamic> articleModelData) {
     return ArticleModel(
@@ -45,6 +46,19 @@ class ArticleModel extends ArticleEntity {
       urlToImage: articleModelData['urlToImage'] ?? "",
       publishedAt: articleModelData['publishedAt'] ?? "",
       content: articleModelData['content'] ?? "",
+    );
+  }
+
+  factory ArticleModel.fromEntity(ArticleEntity entity) {
+    return ArticleModel(
+      id: entity.id,
+      author: entity.author,
+      title: entity.title,
+      description: entity.description,
+      url: entity.url,
+      urlToImage: entity.urlToImage,
+      publishedAt: entity.publishedAt,
+      content: entity.content,
     );
   }
 }
