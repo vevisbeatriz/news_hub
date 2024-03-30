@@ -1,5 +1,5 @@
 name: news_hub
-description: "An app that shows the news"
+description: "News Hub is a comprehensive news application that provides daily news updates from reliable sources. It offers a user-friendly interface with features like saving articles for later reading and deleting articles. It's designed for individuals who want to stay updated with the latest news in a convenient and efficient manner."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
