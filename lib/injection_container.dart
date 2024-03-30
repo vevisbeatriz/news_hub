@@ -8,10 +8,13 @@ import 'package:news_hub/features/daily_news/domain/usecases/delete_article.dart
 import 'package:news_hub/features/daily_news/domain/usecases/get_article.dart';
 import 'package:news_hub/features/daily_news/domain/usecases/get_saved_article.dart';
 import 'package:news_hub/features/daily_news/domain/usecases/save_article.dart';
+import 'package:news_hub/features/daily_news/presentation/bloc/article/local/local_article_bloc.dart';
 import 'package:news_hub/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
 
+// GetIt instance for dependency injection
 final sl = GetIt.instance;
 
+// Function to initialize all the dependencies
 Future<void> initializeDependencies() async {
   final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
   sl.registerSingleton<AppDatabase>(database);
@@ -35,4 +38,6 @@ Future<void> initializeDependencies() async {
 
   // Blocs
   sl.registerFactory<RemoteArticlesBloc>(() => RemoteArticlesBloc(sl()));
+
+  sl.registerFactory<LocalArticleBloc>(() => LocalArticleBloc(sl(), sl(), sl()));
 }

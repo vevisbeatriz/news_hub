@@ -1,8 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../domain/entities/article.dart';
+import 'package:news_hub/features/daily_news/domain/entities/article.dart';
 
+// `ArticleWidget` displays an article in a list.
 class ArticleWidget extends StatelessWidget {
   final ArticleEntity ? article;
   final bool ? isRemovable;
@@ -36,6 +37,7 @@ class ArticleWidget extends StatelessWidget {
     );
   }
 
+  // Builds the image of the article
   Widget _buildImage(BuildContext context) {
     return CachedNetworkImage(
         imageUrl: article!.urlToImage!,
@@ -88,6 +90,7 @@ class ArticleWidget extends StatelessWidget {
     );
   }
 
+  // Builds the title and description of the article
   Widget _buildTitleAndDescription() {
     return Expanded(
       child: Padding(
@@ -139,6 +142,7 @@ class ArticleWidget extends StatelessWidget {
     );
   }
 
+  // Builds the removable area of the article
   Widget _buildRemovableArea() {
     if (isRemovable!) {
       return GestureDetector(
@@ -152,12 +156,14 @@ class ArticleWidget extends StatelessWidget {
     return Container();
   }
 
+  // Handles the tap event on the article
   void _onTap() {
     if (onArticlePressed != null) {
       onArticlePressed!(article!);
     }
   }
 
+  // Handles the remove event on the article
   void _onRemove() {
     if (onRemove != null) {
       onRemove!(article!);

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Function that returns a ThemeData object which encapsulates the colors, type styles, and shapes.
+/// Used for customizing the visual appearance of the app.
 ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
@@ -8,6 +10,8 @@ ThemeData theme() {
   );
 }
 
+/// Function that returns an AppBarTheme object which encapsulates the colors, type styles, and shapes
+/// used for customizing the visual appearance of the AppBar widget.
 AppBarTheme appBarTheme() {
   return const AppBarTheme(
     color: Colors.white,

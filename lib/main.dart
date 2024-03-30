@@ -6,12 +6,16 @@ import 'package:news_hub/features/daily_news/presentation/bloc/article/remote/re
 import 'package:news_hub/features/daily_news/presentation/pages/home/daily_news.dart';
 import 'package:news_hub/injection_container.dart';
 
+// Main function to initialize the app
 Future<void> main() async {
+  // Ensuring the widget binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
+  // Initializing dependencies
   await initializeDependencies();
   runApp(const MyApp());
 }
 
+// `MyApp` is the root widget of the application
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
